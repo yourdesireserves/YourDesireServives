@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YourDesireServices | Find Local Services</title>
+
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #f7f9fc;
+color: #172033;
+}
+
+/* NAVIGATION */
+
+header {
+background: white;
+border-bottom: 1px solid #e6eaf0;
+padding: 18px 7%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.logo {
+font-size: 24px;
+font-weight: 800;
+color: #1264d8;
+}
+
+nav a {
+text-decoration: none;
+color: #374151;
+margin-left: 28px;
+font-size: 15px;
+font-weight: 600;
+}
+
+nav a:hover {
+color: #1264d8;
+}
+
+.login {
+border: 1px solid #1264d8;
+padding: 10px 18px;
+border-radius: 8px;
+color: #1264d8;
+}
+
+.signup {
+background: #1264d8;
+color: white !important;
+padding: 11px 20px;
+border-radius: 8px;
+}
+
+/* HERO */
+
+.hero {
+background: linear-gradient(135deg, #eaf3ff, #ffffff);
+padding: 85px 7%;
+text-align: center;
+}
+
+.hero h1 {
+font-size: 52px;
+line-height: 1.1;
+max-width: 850px;
+margin: auto;
+color: #12213a;
+}
+
+.blue {
+color: #1264d8;
+}
+
+.hero p {
+max-width: 650px;
+margin: 22px auto 35px;
+color: #667085;
+font-size: 18px;
+line-height: 1.6;
+}
+
+/* SEARCH */
+
+.search-box {
+max-width: 900px;
+margin: auto;
+background: white;
+padding: 10px;
+border-radius: 14px;
+display: flex;
+gap: 10px;
+box-shadow: 0 10px 35px rgba(18, 100, 216, 0.12);
+border: 1px solid #e5eaf2;
+}
+
+.search-box input {
+flex: 1;
+border: none;
+outline: none;
+padding: 17px;
+font-size: 15px;
+background: transparent;
+}
+
+.search-button {
+background: #1264d8;
+color: white;
+border: none;
+padding: 0 28px;
+border-radius: 10px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.search-button:hover {
+background: #0d4fae;
+}
+
+/* SECTIONS */
+
+section {
+padding: 70px 7%;
+}
+
+.section-title {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.section-title h2 {
+font-size: 34px;
+color: #172033;
+margin-bottom: 10px;
+}
+
+.section-title p {
+color: #667085;
+}
+
+/* SERVICES */
+
+.services {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+max-width: 1100px;
+margin: auto;
+}
+
+.service-card {
+background: white;
+border: 1px solid #e5eaf2;
+border-radius: 16px;
+padding: 30px;
+transition: 0.25s;
+}
+
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 12px 30px rgba(18, 100, 216, 0.12);
+}
+
+.service-icon {
+width: 55px;
+height: 55px;
+background: #eaf3ff;
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 27px;
+margin-bottom: 20px;
+}
+
+.service-card h3 {
+font-size: 21px;
+margin-bottom: 10px;
+}
+
+.service-card p {
+color: #667085;
+line-height: 1.5;
+margin-bottom: 20px;
+}
+
+.service-link {
+color: #1264d8;
+font-weight: bold;
+text-decoration: none;
+}
+
+/* HOW IT WORKS */
+
+.steps {
+background: white;
+}
+
+.step-container {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 25px;
+max-width: 1100px;
+margin: auto;
+}
+
+.step {
+text-align: center;
+padding: 20px;
+}
+
+.step-number {
+width: 50px;
+height: 50px;
+margin: auto auto 18px;
+border-radius: 50%;
+background: #1264d8;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+}
+
+.step h3 {
+margin-bottom: 10px;
+}
+
+.step p {
+color: #667085;
+line-height: 1.5;
+}
+
+/* PROVIDER */
+
+.provider-section {
+background: #0d3b78;
+color: white;
+border-radius: 0;
+text-align: center;
+}
+
+.provider-section h2 {
+font-size: 38px;
+margin-bottom: 15px;
+}
+
+.provider-section p {
+color: #dce9f9;
+max-width: 600px;
+margin: auto auto 25px;
+line-height: 1.6;
+}
+
+.provider-button {
+display: inline-block;
+background: white;
+color: #1264d8;
+padding: 14px 25px;
+border-radius: 9px;
+text-decoration: none;
+font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+background: #101828;
+color: white;
+padding: 45px 7%;
+}
+
+.footer-content {
+max-width: 1100px;
+margin: auto;
+display: flex;
+justify-content: space-between;
+gap: 30px;
+}
+
+.footer-logo {
+font-size: 22px;
+font-weight: bold;
+color: white;
+}
+
+footer p {
+color: #98a2b3;
+margin-top: 10px;
+}
+
+.footer-links a {
+color: #d0d5dd;
+text-decoration: none;
+margin-left: 20px;
+}
+
+.copyright {
+text-align: center;
+border-top: 1px solid #344054;
+margin-top: 35px;
+padding-top: 25px;
+color: #98a2b3;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+nav {
+display: none;
+}
+
+.hero h1 {
+font-size: 38px;
+}
+
+.search-box {
+flex-direction: column;
+}
+
+.search-button {
+padding: 16px;
+}
+
+.services {
+grid-template-columns: 1fr;
+}
+
+.step-container {
+grid-template-columns: 1fr;
+}
+
+.footer-content {
+flex-direction: column;
+}
+
+.footer-links a {
+margin-left: 0;
+margin-right: 15px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+
+<div class="logo">
+YourDesireServices
+</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#how">How It Works</a>
+<a href="#provider">Become a Provider</a>
+<a href="#" class="login">Log In</a>
+<a href="#" class="signup">Sign Up</a>
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>
+Find the right service
+<span class="blue">for what you need.</span>
+</h1>
+
+<p>
+Discover trusted local professionals and service providers
+all in one convenient place.
+</p>
+
+<div class="search-box">
+
+<input
+type="text"
+placeholder="What service do you need?"
+>
+
+<input
+type="text"
+placeholder="Enter your location"
+>
+
+<button class="search-button">
+Search Services
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="section-title">
+
+<h2>Popular Services</h2>
+
+<p>
+Find professionals for everyday services.
+</p>
+
+</div>
+
+
+<div class="services">
+
+<div class="service-card">
+
+<div class="service-icon">
+🚗
+</div>
+
+<h3>Auto Services</h3>
+
+<p>
+Car detailing, maintenance, repairs and other automotive services.
+</p>
+
+<a href="#" class="service-link">
+Explore Auto Services →
+</a>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🧹
+</div>
+
+<h3>Cleaning Services</h3>
+
+<p>
+Find residential, commercial and deep-cleaning professionals.
+</p>
+
+<a href="#" class="service-link">
+Explore Cleaning →
+</a>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🔧
+</div>
+
+<h3>Home Services</h3>
+
+<p>
+Find reliable help for repairs, installations and home projects.
+</p>
+
+<a href="#" class="service-link">
+Explore Home Services →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section id="how" class="steps">
+
+<div class="section-title">
+
+<h2>How YourDesireServices Works</h2>
+
+<p>
+Finding a service can be simple.
+</p>
+
+</div>
+
+
+<div class="step-container">
+
+<div class="step">
+
+<div class="step-number">1</div>
+
+<h3>Search</h3>
+
+<p>
+Search for the service you need.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">2</div>
+
+<h3>Choose</h3>
+
+<p>
+Compare available service providers.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">3</div>
+
+<h3>Book</h3>
+
+<p>
+Select a date and request your service.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">4</div>
+
+<h3>Get It Done</h3>
+
+<p>
+Connect with your provider and get the job done.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROVIDER -->
+
+<section id="provider" class="provider-section">
+
+<h2>Grow Your Service Business</h2>
+
+<p>
+Join YourDesireServices and connect your business
+with customers looking for services.
+</p>
+
+<a href="#" class="provider-button">
+Become a Provider
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-content">
+
+<div>
+
+<div class="footer-logo">
+YourDesireServices
+</div>
+
+<p>
+Connecting customers with service professionals.
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+<a href="#">Privacy</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 YourDesireServices. All rights reserved.
+
+</div>
+
+</footer>
+
+</body>
+</html>
